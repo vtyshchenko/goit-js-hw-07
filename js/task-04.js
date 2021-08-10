@@ -14,14 +14,14 @@ let counterValue = counterRef.textContent;
 const decButton = divRef.firstElementChild;
 const incButton = divRef.lastElementChild;
 
-decButton.addEventListener("click", decValue);
-incButton.addEventListener("click", incValue);
+decButton.addEventListener("click", onDecValue);
+incButton.addEventListener("click", onIncValue);
 
-function incValue() {
+function onIncValue() {
   counterValue = Number(counterValue) + 1;
   counterRef.textContent = counterValue;
 }
-function decValue() {
+function onDecValue() {
   counterValue -= 1;
   counterRef.textContent = counterValue;
 }
