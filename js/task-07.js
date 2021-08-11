@@ -4,9 +4,12 @@
 
 const textRef = document.querySelector("#text");
 const fontSizeControlRef = document.querySelector("#font-size-control");
+textRef.style.fontSize = `${fontSizeControlRef.valueAsNumber}px`;
 
 fontSizeControlRef.addEventListener("input", onChangeFont);
+console.log(fontSizeControlRef);
 
 function onChangeFont(params) {
+  console.log(params);
   textRef.style.fontSize = `${params.target.valueAsNumber}px`;
 }

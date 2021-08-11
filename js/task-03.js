@@ -22,7 +22,7 @@ const images = [
 // - Додай мінімальне оформлення галереї флексбоксами або грід через css-класи.
 
 const styles = document.querySelector("style");
-console.log(styles);
+
 styles.insertAdjacentHTML(
   "beforeend",
   "img {display: block;width: 100%;} .list {list-style: none; align-items: center; justify-content: space-between; display: flex; flex-wrap: wrap; padding-left: 0; padding-right: 0; margin-top: 0;} li {width: 100%; margin-bottom: 10px;}"

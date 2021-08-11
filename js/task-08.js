@@ -16,24 +16,12 @@
 
 // Створи функцію `destroyBoxes()`, яка очищає `div#boxes`.
 
-// ```html
-// <div id="controls">
-//   <input type="number" min="0" max="100" step="1" />
-//   <button type="button" data-action="render">Створити</button>
-//   <button type="button" data-action="destroy">Очистити</button>
-// </div>
-
-// <div id="boxes"></div>
-// ```
-
 const parentDivBoxesRef = document.querySelector("#boxes");
 const inputRef = document.querySelector("#controls").firstElementChild;
-console.log(`~ inputRef`, inputRef.valueAsNumber);
 
 document.addEventListener("click", onClickButton);
 
 function onClickButton(params) {
-  console.log(params.target.dataset.action);
   if (params.target.dataset.action === "render") {
     createBoxes(inputRef.valueAsNumber);
   }
@@ -58,7 +46,7 @@ function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
     const div = document.createElement("div");
     const [red, green, blue] = getRGB();
-    console.log(red, green, blue);
+
     div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     div.style.width = `${width}px`;
     div.style.height = `${height}px`;
@@ -66,7 +54,7 @@ function createBoxes(amount) {
     width += 10;
     height += 10;
   }
-  console.log(boxes);
+
   parentDivBoxesRef.append(...boxes);
 }
 
