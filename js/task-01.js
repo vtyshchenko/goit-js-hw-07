@@ -16,23 +16,8 @@ const catRef = document.querySelector("#categories");
 
 console.log(`У списку ${catRef.children.length} категорії.`);
 
-console.log(
-  `Категорія: ${catRef.firstElementChild.firstElementChild.textContent}`
-);
-console.log(
-  `Кількість елементів: ${catRef.firstElementChild.lastElementChild.children.length}`
-);
-
-console.log(
-  `Категорія: ${catRef.firstElementChild.nextElementSibling.firstElementChild.textContent}`
-);
-console.log(
-  `Кількість елементів: ${catRef.firstElementChild.nextElementSibling.lastElementChild.children.length}`
-);
-
-console.log(
-  `Категорія: ${catRef.lastElementChild.firstElementChild.textContent}`
-);
-console.log(
-  `Кількість елементів: ${catRef.lastElementChild.lastElementChild.children.length}`
-);
+for (let i = 0; i < catRef.children.length; i++) {
+  const element = catRef.children[i];
+  console.log(`Категорія: ${element.children[0].textContent}`);
+  console.log(`Кількість елементів: ${element.children[1].childElementCount}`);
+}
