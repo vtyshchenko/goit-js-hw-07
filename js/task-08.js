@@ -41,6 +41,8 @@ function createBoxes(amount) {
   let width = 30;
   let height = 30;
 
+  destroyBoxes();
+
   const boxes = [];
   // div
   for (let i = 0; i < amount; i++) {
