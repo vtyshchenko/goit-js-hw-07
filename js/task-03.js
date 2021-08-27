@@ -31,8 +31,9 @@ styles.insertAdjacentHTML(
 const ulListRef = document.querySelector("#gallery");
 ulListRef.classList.add("list");
 
-let s = ``;
-for (const image of images) {
-  s += `<li><img src=${image.url} tag=${image.alt}></img></li>`;
+let markup = images.map(createGallery).join("");
+ulListRef.insertAdjacentHTML("beforeend", markup);
+
+function createGallery({ url, alt }) {
+  return `<li><img src='${url}' alt='${alt}'></li>`;
 }
-ulListRef.insertAdjacentHTML("beforeend", s);
