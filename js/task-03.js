@@ -29,7 +29,7 @@ styles.insertAdjacentHTML(
 );
 
 const ulListRef = document.querySelector("#gallery");
-ulListRef.classList.add("list");
+// ulListRef.classList.add("list");
 
 let markup = images.map(createGallery).join("");
 ulListRef.insertAdjacentHTML("beforeend", markup);
