@@ -12,12 +12,32 @@
 // - Категорія: Тварини
 // - Кількість елементів: 4
 
-const catRef = document.querySelector("#categories");
-
-console.log(`У списку ${catRef.children.length} категорії.`);
-
-for (let i = 0; i < catRef.children.length; i++) {
-  const element = catRef.children[i];
-  console.log(`Категорія: ${element.children[0].textContent}`);
-  console.log(`Кількість елементів: ${element.children[1].childElementCount}`);
+// 200 мс на 801 категорії
+function countFor() {
+  const catRef = document.querySelector("#categories");
+  console.log(`У списку ${catRef.children.length} категорії.`);
+  for (let i = 0; i < catRef.children.length; i++) {
+    const element = catRef.children[i];
+    console.log(`Категорія: ${element.children[0].textContent}`);
+    console.log(
+      `Кількість елементів: ${element.children[1].childElementCount}`
+    );
+  }
 }
+
+// 100 мс на 801 категорії
+function countForEach() {
+  const item = document.querySelectorAll("#categories .item");
+  console.log(`У списку ${item.length} категорії.`);
+  item.forEach((item) => {
+    console.log(`Категорія: ${item.children[0].textContent}`);
+    console.log(`Кількість елементів: ${item.children[1].childElementCount}`);
+  });
+}
+
+console.time();
+countFor();
+console.timeEnd();
+console.time();
+countForEach();
+console.timeEnd();
