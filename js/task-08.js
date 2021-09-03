@@ -44,7 +44,6 @@ function createBoxes(amount) {
   destroyBoxes();
 
   const boxes = [];
-  // div
   for (let i = 0; i < amount; i++) {
     const div = document.createElement("div");
     const [red, green, blue] = getRGB();
@@ -61,6 +60,5 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  // console.log(parentDivBoxesRef);
   parentDivBoxesRef.innerHTML = "";
 }
