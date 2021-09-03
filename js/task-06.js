@@ -15,7 +15,7 @@ inputRef.addEventListener("blur", onOutFocus);
 function onOutFocus(params) {
   const clName =
     params.target.value.length === countLetters ? "valid" : "invalid";
-  inputRef.classList.remove("valid");
-  inputRef.classList.remove("invalid");
-  inputRef.classList.add(clName);
+  params.target.classList.remove("valid");
+  params.target.classList.remove("invalid");
+  params.target.classList.add(clName);
 }
