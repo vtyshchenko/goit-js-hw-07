@@ -31,9 +31,9 @@ function onClickButton(params) {
 }
 
 function getRGB() {
-  const r = Math.floor(Math.random() * 255 + 1);
-  const b = Math.floor(Math.random() * 255 + 1);
-  const g = Math.floor(Math.random() * 255 + 1);
+  const r = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
   return [r, g, b];
 }
 
