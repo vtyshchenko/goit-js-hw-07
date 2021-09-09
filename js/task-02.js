@@ -16,12 +16,18 @@ const ingredients = [
 // Для створення DOM-вузлів використовуй `document.createElement()`.
 
 const ulListRef = document.querySelector("#ingredients");
-const ingredientsRef = [];
 
-ingredients.map((ingradient) => {
+// const ingredientsRef = [];
+// ingredients.map((ingradient) => {
+//   const li = document.createElement("li");
+//   li.textContent = ingradient;
+//   ingredientsRef.push(li);
+// });
+
+const ingredientsRef = ingredients.map((ingradient) => {
   const li = document.createElement("li");
   li.textContent = ingradient;
-  ingredientsRef.push(li);
+  return li;
 });
 
 ulListRef.append(...ingredientsRef);
